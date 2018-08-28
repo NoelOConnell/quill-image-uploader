@@ -5,7 +5,7 @@ A module for Quill rich text editor to allow images to be uploaded to a server i
 
 ## Demo
 
-![Image Uploading Demo GIF](static/quil-example.gif "Image Uploading Demo GIF")
+![Image Uploading Demo GIF](static/quill-example.gif "Image Uploading Demo GIF")
 
 ### Install
 
