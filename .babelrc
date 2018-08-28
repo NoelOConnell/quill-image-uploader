@@ -1,16 +1,14 @@
 {
-    "presets": [
-        [
-            "env",
-            {
-                "targets": {
-                    "browsers": [
-                        "last 3 versions",
-                        "safari >= 6"
-                    ]
-                },
-                "modules": false
-            }
-        ]
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": ["last 3 versions", "safari >= 6"]
+        },
+        "modules": false
+      }
     ]
+  ],
+  "plugins": ["transform-remove-console"]
 }
