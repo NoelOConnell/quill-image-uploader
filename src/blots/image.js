@@ -1,33 +1,29 @@
-import Quill from 'quill';
+import Quill from "quill";
 
-const InlineBlot = Quill.import('blots/block');
+const InlineBlot = Quill.import("blots/block");
 
 export class LoadingImage extends InlineBlot {
-    static create(src) {
-        const node = super.create(src);
-        if (src === true)
-            return node;
-        
-        const image = document.createElement('img');
-        image.setAttribute('src', src);
-        node.appendChild(image);
-        
-        return node;
-    }
-    deleteAt(index, length) {
+  static create(src) {
+    const node = super.create(src);
+    if (src === true) return node;
 
-        console.log('deleteAt', index, length);
-        super.deleteAt(index, 2);
-        this.cache = {};
-    }
-    static value(domNode) {
-        console.log('value called', domNode);
-        const { src, custom } = domNode.dataset;
-        return { src, custom };
-    }
+    const image = document.createElement("img");
+    image.setAttribute("src", src);
+    node.appendChild(image);
+
+    return node;
+  }
+  deleteAt(index, length) {
+    super.deleteAt(index, 2);
+    this.cache = {};
+  }
+  static value(domNode) {
+    const { src, custom } = domNode.dataset;
+    return { src, custom };
+  }
 }
 
-LoadingImage.blotName = 'imageBlot';
-LoadingImage.className = 'image-uploading';
-LoadingImage.tagName = 'span';
-Quill.register({ 'formats/imageBlot': LoadingImage });
+LoadingImage.blotName = "imageBlot";
+LoadingImage.className = "image-uploading";
+LoadingImage.tagName = "span";
+Quill.register({ "formats/imageBlot": LoadingImage });
