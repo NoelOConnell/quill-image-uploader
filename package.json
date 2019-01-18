@@ -1,51 +1,51 @@
 {
-  "name": "quill-image-uploader",
-  "version": "1.0.0",
-  "repository": "https://github.com/noeloconnell/quill-image-uploader.git",
-  "description": "A module for Quill rich text editor to allow images to be uploaded to a server instead of being base64 encoded",
-  "main": "src/quill.imageUploader.js",
-  "eslintConfig": {
-    "extends": "airbnb",
-    "env": {
-      "browser": true
-    }
-  },
-  "scripts": {
-    "watch": "webpack --watch --progress --mode production",
-    "start": "webpack-dev-server --hot --open",
-    "build": "webpack --mode production",
-    "publish": "npm publish"
-  },
-  "keywords": [
-    "quill",
-    "quilljs",
-    "image",
-    "upload"
-  ],
-  "author": "",
-  "license": "MIT",
-  "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.3",
-    "babel-plugin-transform-object-assign": "^6.22.0",
-    "babel-plugin-transform-remove-console": "^6.9.4",
-    "babel-preset-env": "^1.6.1",
-    "css-loader": "^0.28.8",
-    "eslint": "^4.15.0",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.5.1",
-    "extract-text-webpack-plugin": "^4.0.0-beta.0",
-    "jshint": "^2.9.5",
-    "style-loader": "^0.19.1",
-    "uglifyjs-webpack-plugin": "^1.1.6",
-    "webpack": "^4.1.0",
-    "webpack-cli": "^2.0.10",
-    "webpack-dev-server": "^3.1.0"
-  },
-  "dependencies": {
-    "quill": "^1.3.6"
-  }
+	"name": "quill-image-uploader",
+	"version": "1.0.1",
+	"repository": "https://github.com/noeloconnell/quill-image-uploader.git",
+	"description": "A module for Quill rich text editor to allow images to be uploaded to a server instead of being base64 encoded",
+	"main": "src/quill.imageUploader.js",
+	"eslintConfig": {
+		"extends": "airbnb",
+		"env": {
+			"browser": true
+		}
+	},
+	"scripts": {
+		"watch": "webpack --watch --progress --mode production",
+		"start": "webpack-dev-server --hot --open",
+		"build": "webpack --mode production",
+		"publish": "npm publish"
+	},
+	"keywords": [
+		"quill",
+		"quilljs",
+		"image",
+		"upload"
+	],
+	"author": "",
+	"license": "MIT",
+	"devDependencies": {
+		"babel-core": "^6.26.0",
+		"babel-loader": "^7.1.3",
+		"babel-plugin-transform-object-assign": "^6.22.0",
+		"babel-plugin-transform-remove-console": "^6.9.4",
+		"babel-preset-env": "^1.6.1",
+		"css-loader": "^0.28.8",
+		"eslint": "^4.15.0",
+		"eslint-config-airbnb": "^16.1.0",
+		"eslint-config-airbnb-base": "^12.1.0",
+		"eslint-plugin-import": "^2.8.0",
+		"eslint-plugin-jsx-a11y": "^6.0.3",
+		"eslint-plugin-react": "^7.5.1",
+		"extract-text-webpack-plugin": "^4.0.0-beta.0",
+		"jshint": "^2.9.5",
+		"style-loader": "^0.19.1",
+		"uglifyjs-webpack-plugin": "^1.1.6",
+		"webpack": "^4.1.0",
+		"webpack-cli": "^3.2.1",
+		"webpack-dev-server": "^3.1.14"
+	},
+	"dependencies": {
+		"quill": "^1.3.6"
+	}
 }
