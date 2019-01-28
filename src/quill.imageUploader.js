@@ -28,12 +28,10 @@ class ImageUploader {
 
 		document.body.appendChild(this.fileHolder);
 
-		window.requestAnimationFrame(() => {
-			this.fileHolder.click();
+		this.fileHolder.click();
 
-			window.requestAnimationFrame(() => {
-				document.body.removeChild(this.fileHolder);
-			});
+		window.requestAnimationFrame(() => {
+			document.body.removeChild(this.fileHolder);
 		});
 	}
 
