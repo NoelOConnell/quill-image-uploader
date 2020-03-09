@@ -3,7 +3,7 @@
 A module for Quill rich text editor to allow images to be uploaded to a server instead of being base64 encoded
 
 ## Demo
-
+![Image of Yaktocat](/static/quill-example.gif)
 ### Install
 
 Install with npm:
