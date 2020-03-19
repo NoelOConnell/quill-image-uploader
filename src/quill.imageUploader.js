@@ -36,6 +36,7 @@ class ImageUploader {
     }
 
     fileChanged() {
+        let isUploadReject = false;
         const file = this.fileHolder.files[0];
 
         const fileReader = new FileReader();
@@ -43,8 +44,10 @@ class ImageUploader {
         fileReader.addEventListener(
             'load',
             () => {
-                let base64ImageSrc = fileReader.result;
-                this.insertBase64Image(base64ImageSrc);
+                if(!isUploadReject) {
+                    let base64ImageSrc = fileReader.result;
+                    this.insertBase64Image(base64ImageSrc);
+                }
             },
             false
         );
@@ -58,6 +61,7 @@ class ImageUploader {
                 this.insertToEditor(imageUrl);
             },
             error => {
+                isUploadReject = true;
                 this.removeBase64Image();
                 console.warn(error);
             }
