@@ -41,6 +41,8 @@ const quill = new Quill(editor, {
 
 ### Quickstart (script tag)
 
+Example on [CodeSandbox](https://codesandbox.io/s/mutable-tdd-lrsvh)
+
 ```javascript
 // A link to quill.js
 <script src="/dist/quill.js"></script>

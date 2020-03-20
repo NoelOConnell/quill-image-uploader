@@ -44,7 +44,7 @@ class ImageUploader {
         fileReader.addEventListener(
             'load',
             () => {
-                if(!isUploadReject) {
+                if (!isUploadReject) {
                     let base64ImageSrc = fileReader.result;
                     this.insertBase64Image(base64ImageSrc);
                 }
@@ -90,4 +90,5 @@ class ImageUploader {
     }
 }
 
+window.ImageUploader = ImageUploader;
 export default ImageUploader;
