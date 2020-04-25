@@ -42,7 +42,6 @@ class ImageUploader {
     }
 
     handleDrop(evt) {
-        console.log(evt);
         evt.stopPropagation();
         evt.preventDefault();
         if (
@@ -98,12 +97,9 @@ class ImageUploader {
 
                     if (file) {
                         this.range = this.quill.getSelection();
-                        console.log(this.range);
                         evt.preventDefault();
                         setTimeout(() => {
                             this.range = this.quill.getSelection();
-                            console.log(this.range);
-
                             this.readAndUploadFile(file);
                         }, 0);
                     }
@@ -151,23 +147,23 @@ class ImageUploader {
 
     insertBase64Image(url) {
         const range = this.range;
-        this.quill.insertEmbed(range.index, "imageBlot", `${url}`);
+        this.quill.insertEmbed(range.index, "imageBlot", `${url}`, "user");
     }
 
     insertToEditor(url) {
         const range = this.range;
         // Delete the placeholder image
-        this.quill.deleteText(range.index, 3);
+        this.quill.deleteText(range.index, 3, "user");
         // Insert the server saved image
-        this.quill.insertEmbed(range.index, "image", `${url}`);
+        this.quill.insertEmbed(range.index, "image", `${url}`, "user");
 
         range.index++;
-        this.quill.setSelection(range, "api");
+        this.quill.setSelection(range, "user");
     }
 
     removeBase64Image() {
         const range = this.range;
-        this.quill.deleteText(range.index, 3);
+        this.quill.deleteText(range.index, 3, "user");
     }
 }
 
