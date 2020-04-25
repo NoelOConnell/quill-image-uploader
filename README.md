@@ -1,9 +1,12 @@
 # Quill ImageHandler Module
 
-A module for Quill rich text editor to allow images to be uploaded to a server instead of being base64 encoded
+A module for Quill rich text editor to allow images to be uploaded to a server instead of being base64 encoded.
+Adds a button to the toolbar for users to click, also handles drag,dropped and pasted images.
 
 ## Demo
+
 ![Image of Yaktocat](/static/quill-example.gif)
+
 ### Install
 
 Install with npm:
@@ -25,7 +28,7 @@ const quill = new Quill(editor, {
   modules: {
     // ...
     imageUploader: {
-      upload: file => {
+      upload: (file) => {
         return new Promise((resolve, reject) => {
           setTimeout(() => {
             resolve(
@@ -33,9 +36,9 @@ const quill = new Quill(editor, {
             );
           }, 3500);
         });
-      }
-    }
-  }
+      },
+    },
+  },
 });
 ```
 
@@ -67,3 +70,4 @@ var quill = new Quill(editor, {
     }
   }
 });
+```
