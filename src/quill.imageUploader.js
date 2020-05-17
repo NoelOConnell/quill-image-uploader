@@ -1,4 +1,4 @@
-import "./blots/image";
+import LoadingImage from "./blots/image.js";
 
 import "./quill.imageUploader.css";
 
@@ -147,7 +147,12 @@ class ImageUploader {
 
     insertBase64Image(url) {
         const range = this.range;
-        this.quill.insertEmbed(range.index, "imageBlot", `${url}`, "user");
+        this.quill.insertEmbed(
+            range.index,
+            LoadingImage.blotName,
+            `${url}`,
+            "user"
+        );
     }
 
     insertToEditor(url) {
