@@ -24,6 +24,7 @@ class ImageUploader {
     }
 
     selectLocalImage() {
+        this.quill.focus();
         this.range = this.quill.getSelection();
         this.fileHolder = document.createElement("input");
         this.fileHolder.setAttribute("type", "file");
@@ -73,10 +74,12 @@ class ImageUploader {
                 }
             }
 
+            this.quill.focus();
             this.range = this.quill.getSelection();
             let file = evt.dataTransfer.files[0];
 
             setTimeout(() => {
+                this.quill.focus();
                 this.range = this.quill.getSelection();
                 this.readAndUploadFile(file);
             }, 0);
@@ -96,9 +99,11 @@ class ImageUploader {
                     let file = items[i].getAsFile ? items[i].getAsFile() : items[i];
 
                     if (file) {
+                        this.quill.focus();
                         this.range = this.quill.getSelection();
                         evt.preventDefault();
                         setTimeout(() => {
+                            this.quill.focus();
                             this.range = this.quill.getSelection();
                             this.readAndUploadFile(file);
                         }, 0);
