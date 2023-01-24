@@ -15,7 +15,9 @@ class ImageUploader {
             );
 
         var toolbar = this.quill.getModule("toolbar");
-        toolbar.addHandler("image", this.selectLocalImage.bind(this));
+        if (toolbar) {
+            toolbar.addHandler("image", this.selectLocalImage.bind(this));
+        }
 
         this.handleDrop = this.handleDrop.bind(this);
         this.handlePaste = this.handlePaste.bind(this);
