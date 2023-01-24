@@ -46,13 +46,13 @@ class ImageUploader {
     }
 
     handleDrop(evt) {
-        evt.stopPropagation();
-        evt.preventDefault();
         if (
             evt.dataTransfer &&
             evt.dataTransfer.files &&
             evt.dataTransfer.files.length
         ) {
+            evt.stopPropagation();
+            evt.preventDefault();
             if (document.caretRangeFromPoint) {
                 const selection = document.getSelection();
                 const range = document.caretRangeFromPoint(evt.clientX, evt.clientY);
