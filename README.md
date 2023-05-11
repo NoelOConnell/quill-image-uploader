@@ -19,7 +19,9 @@ npm install quill-image-uploader --save
 
 ```javascript
 import Quill from "quill";
-import ImageUploader from "quill.imageUploader.js";
+import ImageUploader from "quill-image-uploader";
+
+import 'quill-image-uploader/dist/quill.imageUploader.min.css';
 
 Quill.register("modules/imageUploader", ImageUploader);
 

@@ -4,7 +4,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = [{
     entry: {
-        "quill.imageUploader": "./src/quill.imageUploader.js",
+        "quill.imageUploader": "./src/dist.js",
         demo: "./src/demo.js",
     },
     output: {
