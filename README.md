@@ -77,3 +77,43 @@ var quill = new Quill(editor, {
   }
 });
 ```
+
+### Automated testing example with Cypress
+
+You may configure a `data-testid` attribute for testing frameworks such as
+[Cypress](https://cypress.io/) to find the file input and upload images.
+
+#### Configuring the data-testid
+```javascript
+var quill = new Quill(editor, {
+  // ...
+  modules: {
+    // ...
+    imageUploader: {
+      upload: myUploadFunction,
+      testId: "quill-image-upload"
+    }
+  }
+});
+```
+
+#### Selecting and uploading in Cypress
+```javascript
+it("Uploads images correctly", () => {
+  cy.visit("/posts/new");
+
+  // the file input should be available for selection after this point
+  cy.get("button.ql-image").click();
+
+  // select the file input using the data-testid attribute given in the
+  // configuration and upload a file to it
+  cy.get("input[type=file][data-testid=quill-image-upload]").selectFile(
+    "cypress/fixtures/my-post-header.png",
+    { force: true } // may be needed for non-visible inputs
+  );
+
+  // Verify that your image appears. Should wait for your upload function to
+  // finish and insert the image into the content.
+  cy.get(".ql-editor img").should("exist");
+});
+```

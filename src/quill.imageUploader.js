@@ -4,8 +4,9 @@ class ImageUploader {
     constructor(quill, options) {
         this.quill = quill;
         this.options = options;
-        this.range = null;             
-        this.placeholderDelta = null; 
+        this.range = null;
+        this.placeholderDelta = null;
+        this.testId = options.testId;
 
         if (typeof this.options.upload !== "function")
             console.warn(
@@ -32,15 +33,15 @@ class ImageUploader {
         this.fileHolder.setAttribute("accept", "image/*");
         this.fileHolder.setAttribute("style", "visibility:hidden");
 
+        if (this.testId) {
+            this.fileHolder.setAttribute("data-testid", this.testId);
+        }
+
         this.fileHolder.onchange = this.fileChanged.bind(this);
 
         document.body.appendChild(this.fileHolder);
 
         this.fileHolder.click();
-
-        window.requestAnimationFrame(() => {
-            document.body.removeChild(this.fileHolder);
-        });
     }
 
     handleDrop(evt) {
@@ -147,13 +148,14 @@ class ImageUploader {
     }
 
     fileChanged() {
+        document.body.removeChild(this.fileHolder);
         const file = this.fileHolder.files[0];
         this.readAndUploadFile(file);
     }
 
     insertBase64Image(url) {
         const range = this.range;
-                
+
         this.placeholderDelta = this.quill.insertEmbed(
             range.index,
             LoadingImage.blotName,
