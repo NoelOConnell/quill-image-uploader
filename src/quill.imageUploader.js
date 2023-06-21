@@ -144,6 +144,8 @@ class ImageUploader {
                 console.warn(error);
             }
         );
+
+        this.placeholderDelta = null;
     }
 
     fileChanged() {
