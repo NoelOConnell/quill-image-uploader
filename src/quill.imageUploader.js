@@ -178,6 +178,10 @@ class ImageUploader {
 
     // The length of the insert delta from insertBase64Image can vary depending on what part of the line the insert occurs
     calculatePlaceholderInsertLength() {
+        if (this.placeholderDelta === null) {
+            return 0;
+        }
+
         return this.placeholderDelta.ops.reduce((accumulator, deltaOperation) => {
             if (deltaOperation.hasOwnProperty('insert'))
                 accumulator++;
