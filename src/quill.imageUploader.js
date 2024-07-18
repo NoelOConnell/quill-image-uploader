@@ -1,6 +1,10 @@
+import Quill from "quill";
 import LoadingImage from "./blots/image.js";
 
 class ImageUploader {
+    static register() {
+        Quill.register({ "formats/imageBlot": LoadingImage }, true);
+    }
     constructor(quill, options) {
         this.quill = quill;
         this.options = options;
@@ -194,5 +198,5 @@ class ImageUploader {
     }
 }
 
-window.ImageUploader = ImageUploader;
+// window.ImageUploader = ImageUploader;
 export default ImageUploader;
